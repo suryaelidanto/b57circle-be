@@ -16,6 +16,10 @@ export const authentication = (
   res: Response,
   next: NextFunction
 ) => {
+  /* #swagger.security = [{
+            "bearerAuth": []
+    }] */
+
   const { authorization } = req.headers;
 
   if (!authorization) {
@@ -30,14 +34,14 @@ export const authentication = (
     return;
   }
 
-  let decoded = jwt.verify(token, "SECRETKEY") as UserJWTPayload
+  let decoded = jwt.verify(token, "SECRETKEY") as UserJWTPayload;
 
   if (!decoded) {
     res.status(401).json({ message: "Unauthorized" });
     return;
   }
 
-  delete decoded.password
+  delete decoded.password;
 
   res.locals.user = decoded;
 

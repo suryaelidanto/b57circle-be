@@ -6,7 +6,8 @@
       "test": "echo \"Error: no test specified\" && exit 1",
       "dev": "nodemon index.ts",
       "postinstall": "npx prisma generate",
-      "build": "prisma generat && tsc"
+      "build": "prisma generat && tsc",
+      "swagger": "node ./swagger/swagger.js"
    },
    "keywords": [],
    "author": "",
@@ -14,6 +15,7 @@
    "description": "",
    "dependencies": {
       "@prisma/client": "^5.21.1",
+      "@redis/client": "^1.6.0",
       "bcrypt": "^5.1.1",
       "cloudinary": "^2.5.1",
       "cors": "^2.8.5",
@@ -22,6 +24,9 @@
       "express-rate-limit": "^7.4.1",
       "jsonwebtoken": "^9.0.2",
       "multer": "^1.4.5-lts.1",
+      "redis": "^4.7.0",
+      "swagger-autogen": "^2.23.7",
+      "swagger-ui-express": "^5.0.1",
       "zod": "^3.23.8"
    },
    "devDependencies": {
@@ -31,6 +36,7 @@
       "@types/jsonwebtoken": "^9.0.7",
       "@types/multer": "^1.4.12",
       "@types/node": "^22.7.7",
+      "@types/swagger-ui-express": "^4.1.7",
       "nodemon": "^3.1.7",
       "prisma": "^5.21.1",
       "ts-node": "^10.9.2",
